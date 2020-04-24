@@ -50,6 +50,10 @@
   <nav class="site-navigation">
     <ul>
       
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
     </ul>
   </nav>
 </header>
@@ -66,7 +70,7 @@
   <div class="article-top-meta">
     <span class="posted-on">
       <a href="/2020/04/24/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T05:36:40.815Z">
+        <time class="entry-date published" datetime="2020-04-24T05:51:09.423Z">
           2020-04-24
         </time>
       </a>
@@ -113,6 +117,23 @@
 
   
 
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'SeeHaze',
+			repo: 'SeeHaze.github.io',
+			oauth: {
+				client_id: 'b385b4ed19f856e14741',
+				client_secret: '24794c27927a94c7c0e62134605aaabd44a2998e',
+			},
+		})
+		gitment.render('gitment')
+	</script>
 
 
 
