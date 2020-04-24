@@ -42,6 +42,7 @@
 	<script src="https://billts.site/js/gitment.js"></script>
 	<script>
 		var gitment = new Gitment({
+			id: decodeURI(window.location.pathname),
 			owner: '<%= theme.gitment_owner %>',
 			repo: '<%= theme.gitment_repo %>',
 			oauth: {
