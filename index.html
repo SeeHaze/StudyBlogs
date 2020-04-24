@@ -66,7 +66,7 @@
   <div class="article-top-meta">
     <span class="posted-on">
       <a href="/2020/04/24/frp实现内网穿透功能/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T09:54:50.107Z">
+        <time class="entry-date published" datetime="2020-04-24T10:01:50.243Z">
           2020-04-24
         </time>
       </a>
@@ -181,7 +181,7 @@
   <div class="article-top-meta">
     <span class="posted-on">
       <a href="/2020/04/24/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T09:54:50.107Z">
+        <time class="entry-date published" datetime="2020-04-24T10:01:50.243Z">
           2020-04-24
         </time>
       </a>
@@ -248,7 +248,7 @@
   <div class="article-top-meta">
     <span class="posted-on">
       <a href="/2020/04/24/正则表达式基础语法/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T09:54:50.107Z">
+        <time class="entry-date published" datetime="2020-04-24T10:01:50.243Z">
           2020-04-24
         </time>
       </a>
@@ -299,13 +299,13 @@
 </tr>
 </tbody></table>
 <p>例如：</p>
-<p> <code>\ba\w*\b</code> 匹配以字母a开头的单词——先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w*)，最后是单词结束处(\b)。</p>
-<p> <code>\d+</code> 匹配1个或更多连续的数字。这里的+是和<em>类似的元字符，不同的是</em>匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。</p>
-<p> <code>\b\w{6}\b</code>  匹配刚好6个字符的单词。</p>
-<p>元字符^和$都匹配一个位置，这和\b有点类似。^匹配要用来查找的字符串的开头，$匹配结尾。这两个代码在验证输入的内容时非常有用，比如一个网站如果要求你填写的QQ号必须为5位到12位数字时，可以使用： <code>^\d{5,12}$</code> 。</p>
+<p><code>\ba\w*\b</code>匹配以字母a开头的单词——先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w*)，最后是单词结束处(\b)。</p>
+<p><code>\d+</code>匹配1个或更多连续的数字。这里的+是和<em>类似的元字符，不同的是</em>匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。</p>
+<p><code>\b\w{6}\b</code> 匹配刚好6个字符的单词。</p>
+<p>元字符^和$都匹配一个位置，这和\b有点类似。^匹配要用来查找的字符串的开头，$匹配结尾。这两个代码在验证输入的内容时非常有用，比如一个网站如果要求你填写的QQ号必须为5位到12位数字时，可以使用：<code>^\d{5,12}$</code>。</p>
 <p>因为使用了^和$，所以输入的整个字符串都要用来和\d{5,12}来匹配，也就是说整个输入必须是5到12个数字，因此如果输入的QQ号能匹配这个正则表达式的话，那就符合要求了。</p>
-<h2 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a><strong>字符转义</strong></h2><p>如果查找元字符本身的话，比如查找.,或者*,就得使用 <code>\</code> 来取消这些字符的特殊意义。因此，使用 <code>\.</code> 和 <code>\*</code> 。当然，要查找\本身，也得用 <code>\\</code> 。</p>
-<p>例如： <code>deerchao\.cn</code> 匹配deerchao.cn， <code>C:\\Windows</code> 匹配C:\Windows。</p>
+<h2 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a><strong>字符转义</strong></h2><p>如果查找元字符本身的话，比如查找.,或者*,就得使用<code>\</code>来取消这些字符的特殊意义。因此，使用<code>\.</code>和<code>\*</code>。当然，要查找\本身，也得用<code>\\</code>。</p>
+<p>例如：<code>deerchao\.cn</code>匹配deerchao.cn，<code>C:\\Windows</code>匹配C:\Windows。</p>
 <h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a><strong>重复</strong></h2><table>
 <thead>
 <tr>
@@ -341,18 +341,18 @@
 <h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a><strong>字符类</strong></h2><p>要想查找数字、字母或数字等是很简单的，已经有了对应这些字符集合的元字符，</p>
 <p>如果要匹配没有预定义元字符的字符集合，需要在方括号里列出它们</p>
 <p>例如：</p>
-<p> <code>[aeiou]</code> 匹配任何一个英文元音字母</p>
-<p> <code>[.?!]</code> 匹配标点符号(.或?或!)</p>
-<p> <code>[0-9]</code> 等同于\d，表示一位数字</p>
-<p> <code>[a-z0-9A-Z_]</code> 匹配数字字母及下划线</p>
-<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件"></a><strong>分枝条件</strong></h2><p>分枝条件指的是有几种规则，如果满足其中任意一种规则都应该当成匹配，具体方法是用  <code>|</code>  把不同的规则分隔开</p>
+<p><code>[aeiou]</code>匹配任何一个英文元音字母</p>
+<p><code>[.?!]</code>匹配标点符号(.或?或!)</p>
+<p><code>[0-9]</code>等同于\d，表示一位数字</p>
+<p><code>[a-z0-9A-Z_]</code>匹配数字字母及下划线</p>
+<h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件"></a><strong>分枝条件</strong></h2><p>分枝条件指的是有几种规则，如果满足其中任意一种规则都应该当成匹配，具体方法是用 <code>|</code> 把不同的规则分隔开</p>
 <p>例如：</p>
-<p> <code>0\d{2}-\d{8}|0\d{3}-\d{7}</code> </p>
+<p><code>0\d{2}-\d{8}|0\d{3}-\d{7}</code></p>
 <p>这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号，8位本地号(如010-12345678)，一种是4位区号，7位本地号(0376-2233445)</p>
 <p>匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了，因此，<strong>使用分枝条件时，要注意各个条件的顺序</strong></p>
 <h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a><strong>分组</strong></h2><p>如果想要重复多个字符，可以用小括号来指定子表达式(也叫做分组)</p>
 <p>例如：</p>
-<p> <code>((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)</code> 匹配IP地址</p>
+<p><code>((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)</code>匹配IP地址</p>
 <h2 id="反义"><a href="#反义" class="headerlink" title="反义"></a><strong>反义</strong></h2><table>
 <thead>
 <tr>
@@ -386,17 +386,17 @@
 </tr>
 </tbody></table>
 <p>例如：</p>
-<p> <code>\S+</code> 匹配不包含空白符的字符串。</p>
-<p> <code>&lt;a[^&gt;]+&gt;</code> 匹配用尖括号括起来的以a开头的字符串</p>
+<p><code>\S+</code>匹配不包含空白符的字符串。</p>
+<p><code>&lt;a[^&gt;]+&gt;</code>匹配用尖括号括起来的以a开头的字符串</p>
 <h2 id="后向引用"><a href="#后向引用" class="headerlink" title="后向引用"></a><strong>后向引用</strong></h2><p>使用小括号指定一个子表达式后，<strong>匹配这个子表达式的文本</strong>(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。默认情况下，每个分组会自动拥有一个<strong>组号</strong>，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。</p>
-<p><strong>后向引用</strong>用于重复搜索前面某个分组匹配的文本。例如， <code>\1</code> 代表分组1匹配的文本。</p>
+<p><strong>后向引用</strong>用于重复搜索前面某个分组匹配的文本。例如，<code>\1</code>代表分组1匹配的文本。</p>
 <p>例：</p>
-<p> <code>\b(\w+)\b\s+\1\b</code> 可以用来匹配类似go go，ha ha的重复的单词</p>
+<p><code>\b(\w+)\b\s+\1\b</code>可以用来匹配类似go go，ha ha的重复的单词</p>
 <p>也可以指定子表达式的<strong>组名</strong>。</p>
-<p>语法： <code>(?&lt;name&gt;exp)</code> ，或者把尖括号换成’： <code>(?&#39;name&#39;exp)</code> </p>
+<p>语法：<code>(?&lt;name&gt;exp)</code>，或者把尖括号换成’：<code>(?&#39;name&#39;exp)</code></p>
 <p>要反向引用这个分组<strong>捕获</strong>的内容，可以使用\k<name></p>
 <p>例如：</p>
-<p> <code>\b(?&lt;Word&gt;\w+)\b\s+\k&lt;Word&gt;\b</code> </p>
+<p><code>\b(?&lt;Word&gt;\w+)\b\s+\k&lt;Word&gt;\b</code></p>
 <table>
 <thead>
 <tr>
@@ -449,21 +449,21 @@
 <h2 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a><strong>零宽断言</strong></h2><p>用于查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此被称为<strong>零宽断言</strong>。</p>
 <p>例如：</p>
 <ol>
-<li><code>(?=exp)</code> 也叫<strong>零宽度正预测先行断言</strong><code>(什么鬼？)</code>，它断言自身出现的位置的后面能匹配表达式exp。比如  <code>\b\w+(?=ing\b)</code>  ，匹配以ing结尾的单词的前面部分(除了ing以外的部分)</li>
-<li><code>(?&lt;=exp)</code> 也叫<strong>零宽度正回顾后发断言</strong><code>(嘛玩意？)</code>，它断言自身出现的位置的前面能匹配表达式exp。比如  <code>(?&lt;=\bre)\w+\b</code>  会匹配以re开头的单词的后半部分(除了re以外的部分)</li>
-<li><code>(?&lt;=\s)\d+(?=\s)</code> 匹配以空白符间隔的数字(再次强调，不包括这些空白符)。</li>
+<li><code>(?=exp)</code>也叫<strong>零宽度正预测先行断言</strong><code>(什么鬼？)</code>，它断言自身出现的位置的后面能匹配表达式exp。比如 <code>\b\w+(?=ing\b)</code> ，匹配以ing结尾的单词的前面部分(除了ing以外的部分)</li>
+<li><code>(?&lt;=exp)</code>也叫<strong>零宽度正回顾后发断言</strong><code>(嘛玩意？)</code>，它断言自身出现的位置的前面能匹配表达式exp。比如 <code>(?&lt;=\bre)\w+\b</code> 会匹配以re开头的单词的后半部分(除了re以外的部分)</li>
+<li><code>(?&lt;=\s)\d+(?=\s)</code>匹配以空白符间隔的数字(再次强调，不包括这些空白符)。</li>
 </ol>
 <h2 id="负向零宽断言"><a href="#负向零宽断言" class="headerlink" title="负向零宽断言"></a><strong>负向零宽断言</strong></h2><p>如果只是想要<strong>确保某个字符没有出现，但并不想去匹配它</strong>时，我们可以尝试使用<strong>负向零宽断言</strong></p>
 <p>例如：</p>
 <ol>
-<li><code>(?!exp)</code> 也叫<strong>零宽度负预测先行断言</strong><code>(你说啥？)</code>，断言此位置的后面不能匹配表达式exp。比如：  <code>\d{3}(?!\d)</code>  匹配三位数字，而且这三位数字的后面不能是数字； <code>\b((?!abc)\w)+\b</code> 匹配不包含连续字符串abc的单词。</li>
-<li><code>(?&lt;!exp)</code> 也叫<strong>零宽度负回顾后发断言</strong><code>(听不清！)</code>，断言此位置的前面不能匹配表达式exp。比如：  <code>(?&lt;![a-z])\d{7}</code>  匹配前面不是小写字母的七位数字。</li>
-<li><code>(?&lt;=&lt;(\w+)&gt;).*(?=&lt;\/\1&gt;)</code> 匹配不包含属性的简单HTML标签内里的内容。 <code>(?&lt;=&lt;(\w+)&gt;)</code> 指定了这样的<strong>前缀</strong>：被尖括号括起来的单词(比如可能是 <code>&lt;b&gt;</code> )，然后是 <code>.*</code> (任意的字符串),最后是一个<strong>后缀</strong> <code>(?=&lt;\/\1&gt;)</code> 。注意后缀里的 <code>\/</code> ，它用到了前面提过的字符转义； <code>\1</code> 则是一个反向引用，引用的正是捕获的第一组，前面的 <code>(\w+)</code> 匹配的内容，这样如果前缀实际上是 <code>&lt;b&gt;</code> 的话，后缀就是 <code>&lt;/b&gt;</code> 了。整个表达式匹配的是 <code>&lt;b&gt;</code> 和 <code>&lt;/b&gt;</code> 之间的内容(再次提醒，不包括前缀和后缀本身)。</li>
+<li><code>(?!exp)</code>也叫<strong>零宽度负预测先行断言</strong><code>(你说啥？)</code>，断言此位置的后面不能匹配表达式exp。比如： <code>\d{3}(?!\d)</code> 匹配三位数字，而且这三位数字的后面不能是数字；<code>\b((?!abc)\w)+\b</code>匹配不包含连续字符串abc的单词。</li>
+<li><code>(?&lt;!exp)</code>也叫<strong>零宽度负回顾后发断言</strong><code>(听不清！)</code>，断言此位置的前面不能匹配表达式exp。比如： <code>(?&lt;![a-z])\d{7}</code> 匹配前面不是小写字母的七位数字。</li>
+<li><code>(?&lt;=&lt;(\w+)&gt;).*(?=&lt;\/\1&gt;)</code>匹配不包含属性的简单HTML标签内里的内容。<code>(?&lt;=&lt;(\w+)&gt;)</code>指定了这样的<strong>前缀</strong>：被尖括号括起来的单词(比如可能是<code>&lt;b&gt;</code>)，然后是<code>.*</code>(任意的字符串),最后是一个<strong>后缀</strong><code>(?=&lt;\/\1&gt;)</code>。注意后缀里的<code>\/</code>，它用到了前面提过的字符转义；<code>\1</code>则是一个反向引用，引用的正是捕获的第一组，前面的<code>(\w+)</code>匹配的内容，这样如果前缀实际上是<code>&lt;b&gt;</code>的话，后缀就是<code>&lt;/b&gt;</code>了。整个表达式匹配的是<code>&lt;b&gt;</code>和<code>&lt;/b&gt;</code>之间的内容(再次提醒，不包括前缀和后缀本身)。</li>
 </ol>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h2><p>小括号的另一种用途是通过语法 <code>(?#comment)</code> 来包含注释。例如： <code>2[0-4]\d(?#200-249)|25[0-5](?#250-255)|[01]?\d\d?(?#0-199)</code> 。</p>
-<h2 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a><strong>贪婪与懒惰</strong></h2><p>当正则表达式中包含能接受重复的限定符时，通常的行为是（在使整个表达式能得到匹配的前提下）匹配<strong>尽可能多</strong>的字符。以这个表达式为例： <code>a.*b</code> ，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。这被称为<strong>贪婪</strong>匹配。</p>
-<p>有时，更需要<strong>懒惰</strong>匹配，也就是匹配<strong>尽可能少</strong>的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号 <code>?</code> 。这样 <code>.*?</code> 就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。现在看看懒惰版的例子吧：</p>
-<p> <code>a.*?b</code> 匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab（第一到第三个字符）和ab（第四到第五个字符）。</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h2><p>小括号的另一种用途是通过语法<code>(?#comment)</code>来包含注释。例如：<code>2[0-4]\d(?#200-249)|25[0-5](?#250-255)|[01]?\d\d?(?#0-199)</code>。</p>
+<h2 id="贪婪与懒惰"><a href="#贪婪与懒惰" class="headerlink" title="贪婪与懒惰"></a><strong>贪婪与懒惰</strong></h2><p>当正则表达式中包含能接受重复的限定符时，通常的行为是（在使整个表达式能得到匹配的前提下）匹配<strong>尽可能多</strong>的字符。以这个表达式为例：<code>a.*b</code>，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。这被称为<strong>贪婪</strong>匹配。</p>
+<p>有时，更需要<strong>懒惰</strong>匹配，也就是匹配<strong>尽可能少</strong>的字符。前面给出的限定符都可以被转化为懒惰匹配模式，只要在它后面加上一个问号<code>?</code>。这样<code>.*?</code>就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。现在看看懒惰版的例子吧：</p>
+<p><code>a.*?b</code>匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab（第一到第三个字符）和ab（第四到第五个字符）。</p>
 <table>
 <thead>
 <tr>
