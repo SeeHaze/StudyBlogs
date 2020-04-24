@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: AcePigeon的笔记
+title: Moyuu的笔记
 subtitle: ''
 description: ''
 keywords:
-author: Ace Pigeon
+author: Moyuu
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://acepigeon.github.io/
+url: http://blog.moyuu.fun/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
