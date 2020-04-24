@@ -1,0 +1,33 @@
+menu:
+  Home: /
+  Archives: /archives
+
+# gitment
+gitment: true
+gitment_owner: SeeHaze
+gitment_repo: SeeHaze.github.io
+gitment_client_id: b385b4ed19f856e14741
+gitment_client_secret: 24794c27927a94c7c0e62134605aaabd44a2998e
+
+# gitalk
+gitalk: false
+gitalk_owner:
+gitalk_admin: []
+gitalk_repo:
+gitalk_client_id:
+gitalk_client_secret:
+
+# valine comment
+valine: false
+leancloud_id:
+leancloud_key:
+
+# disqus comment
+disqus: false
+disqus_shortname:
+
+# google analytics
+googleTrackId:
+
+# whether to show read more button when showing article in excerpt in main page
+read_more: false
