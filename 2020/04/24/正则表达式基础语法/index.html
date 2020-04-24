@@ -3,21 +3,44 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Moyuu的笔记</title>
+  <title>正则表达式基础语法 | Moyuu的笔记</title>
 
   
   <meta name="author" content="Moyuu">
   
 
   
+  <meta name="description" content="正则表达式参考Created By: Moyuu FunLast Edited: Dec 21, 2019 4:01 PMTags: RegExp, 正则表达式
+元字符
 
+
+代码
+说明
+
+
+
+.
+匹配除换行符以外的任意字符
+
+
+\w
+匹配字母或数字或下划线或汉字
+
+
+\s
+匹配任意的空白符，包括空格">
+  
+
+  
+  
+  <meta name="keywords" content="">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="正则表达式基础语法"/>
 
   <meta property="og:site_name" content="Moyuu的笔记"/>
 
@@ -54,194 +77,11 @@
 </header>
 
     <main class="site-main posts-loop">
-    
-  <article>
+    <article>
 
   
     
-    <h3 class="article-title"><a href="/2020/04/24/frp实现内网穿透功能/"><span>frp实现内网穿透功能</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/04/24/frp实现内网穿透功能/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T09:22:22.595Z">
-          2020-04-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="frp实现内网穿透功能"><a href="#frp实现内网穿透功能" class="headerlink" title="frp实现内网穿透功能"></a>frp实现内网穿透功能</h1><h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><ol>
-<li>一台公网主机（我是用的阿里云服务器，系统centOS 7）<ol start="2">
-<li>内网主机（我用的是个人电脑，系统win10） </li>
-</ol>
-</li>
-<li>域名</li>
-<li>域名解析到公网主机</li>
-</ol>
-<h3 id="安装frp"><a href="#安装frp" class="headerlink" title="安装frp"></a>安装frp</h3><ol>
-<li><p>linux</p>
-<ul>
-<li><p>下载安装包，地址<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener" title="下载地址">https://github.com/fatedier/frp/releases</a>，选择对应的linux版本，上传至Linux服务器。或者选择下面方式下载：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.32.0/frp_0.32.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压 <code>tar -zxvf frp_0.32.0_linux_amd64.tar.gz</code></p>
-</li>
-<li><p>进入解压目录 <code>cd frp_0.32.0_linux_amd64</code>，这里主要关注4个文件，分别是<strong>frpc、frpc.ini</strong> 和 <strong>frps、frps.ini</strong>，frpc是客户端需要用的文件，frps是服务端需要的文件</p>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li><p>windows</p>
-<ul>
-<li>下载安装包，地址<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener" title="下载地址">https://github.com/fatedier/frp/releases</a>，选择对应的win版本，解压，进入解压目录。</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p>服务端（公网主机）配置：</p>
-<ul>
-<li><p>删除frpc、frpc.ini两个文件，然后编辑frps/ini文件 <code>vi ./frps.ini</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000           #与客户端绑定的进行通信的端口</span><br><span class="line">vhost_http_port = 8000     #访问客户端web服务自定义的端口号</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>保存后启动服务 <code>./frps -c ./frps.ini</code>，这个命令是前台启动可以使用nohup命令后台启动 <code>nohup ./frps -c ./frps.ini &amp;</code></li>
-<li>在防火墙上开放刚才设置的两个端口</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>客户端配置：</p>
-<ul>
-<li><p>删除frps、frps.ini两个文件，然后编辑frpc.ini</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 101.132.236.xxx   #公网服务器ip</span><br><span class="line">server_port = 7000            #与服务端bind_port一致</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash">公网访问内部web服务器以http方式</span></span><br><span class="line">[web]</span><br><span class="line">type = http         #访问协议</span><br><span class="line">local_port = 12345   #内网web服务的端口号</span><br><span class="line">custom_domains = www.moyuu.fun   #所绑定的公网服务器域名</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果是win系统，在当前目录中打开powerShell，执行<code>./frpc.exe -c ./frpc.ini</code></p>
-</li>
-<li><p>如果是linux则执行 <code>nohup ./frpc -c ./frpc.ini &amp;</code></p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><ol>
-<li><p>先访问本地web站点</p>
-<p><img src="http://file.moyuu.fun:10031/images/image-20200402132605338.png" alt="image-20200402132605338"></p>
-</li>
-<li><p>通过域名访问（这里加了端口号，如果想要不加端口号就能访问，则需要在nginx里添加代理转发）</p>
-<p><img src="http://file.moyuu.fun:10031/images/image-20200402132638843.png" alt="image-20200402132638843"></p>
-</li>
-</ol>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/04/24/frp实现内网穿透功能/#comment">评论</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/04/24/hello-world/"><span>Hello World</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/04/24/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T09:22:22.595Z">
-          2020-04-24
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/04/24/hello-world/#comment">评论</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/04/24/正则表达式基础语法/"><span>正则表达式基础语法</span></a></h3>
+    <h3 class="article-title"><span>正则表达式基础语法</span></h3>
     
   
 
@@ -617,25 +457,34 @@
     </div>
 
     
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/04/24/正则表达式基础语法/#comment">评论</a>
-        </span>
-      </span>
-    </div>
-    
   </div>
 </article>
 
-
-
-
-<nav class="pagination">
   
-  
-</nav>
+
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<script>
+		var gitment = new Gitment({
+			id: decodeURI(window.location.pathname),
+			owner: 'SeeHaze',
+			repo: 'StudyBlogs',
+			oauth: {
+				client_id: 'b385b4ed19f856e14741',
+				client_secret: '24794c27927a94c7c0e62134605aaabd44a2998e',
+			},
+		})
+		gitment.render('gitment')
+	</script>
+
+
+
+
+
     </main>
 
     <footer class="site-footer">
