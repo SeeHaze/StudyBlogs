@@ -61,15 +61,80 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/04/24/frp实现内网穿透功能/"><span>frp实现内网穿透功能</span></a></h3>
+    <h3 class="article-title"><a href="/2020/04/28/VS生成项目时报错xxx不存在/"><span>VS生成项目时报错xxx不存在</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/04/24/frp实现内网穿透功能/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T10:44:12.180Z">
-          2020-04-24
+      <a href="/2020/04/28/VS生成项目时报错xxx不存在/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-04-28T03:37:10.764Z">
+          2020-04-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>​    VS生成项目时报错：bin/xxxxx/xxxx/xxx.exe不存在（例如“bin/Roslyn/Rosly/ncsc.exe不存在”）</p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>​    右键项目→生成事件→生成前事件命令行，添加如下格式代码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">del /f /s /q $(TargetDir)\*.*</span><br><span class="line">md $(TargetDir)\WebSite\</span><br><span class="line">xcopy $(ProjectDir)WebSite\*.* $(TargetDir)WebSite\  /s /e /c /y /h /r</span><br></pre></td></tr></table></figure>
+
+<p>​    例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">del /f /s /q $(TargetDir)\*.*</span><br><span class="line">md $(TargetDir)\Roslyn\</span><br><span class="line">xcopy E:\Repos\LogCenter\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\tools\Roslyn45\*.* $(TargetDir)Roslyn\  /s /e /c /y /h /r</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/04/28/VS生成项目时报错xxx不存在/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/04/28/frp实现内网穿透功能/"><span>frp实现内网穿透功能</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/04/28/frp实现内网穿透功能/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-04-28T03:37:10.764Z">
+          2020-04-28
         </time>
       </a>
     </span>
@@ -162,7 +227,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/04/24/frp实现内网穿透功能/#comment">评论</a>
+          <a href="/2020/04/28/frp实现内网穿透功能/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -176,15 +241,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/04/24/快速删除文件夹方法/"><span>快速删除文件夹方法</span></a></h3>
+    <h3 class="article-title"><a href="/2020/04/28/快速删除文件夹方法/"><span>快速删除文件夹方法</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/04/24/快速删除文件夹方法/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T10:44:12.180Z">
-          2020-04-24
+      <a href="/2020/04/28/快速删除文件夹方法/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-04-28T03:37:10.764Z">
+          2020-04-28
         </time>
       </a>
     </span>
@@ -230,7 +295,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/04/24/快速删除文件夹方法/#comment">评论</a>
+          <a href="/2020/04/28/快速删除文件夹方法/#comment">评论</a>
         </span>
       </span>
     </div>
@@ -244,15 +309,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/04/24/正则表达式基础语法/"><span>正则表达式基础语法</span></a></h3>
+    <h3 class="article-title"><a href="/2020/04/28/正则表达式基础语法/"><span>正则表达式基础语法</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/04/24/正则表达式基础语法/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-04-24T10:44:12.180Z">
-          2020-04-24
+      <a href="/2020/04/28/正则表达式基础语法/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-04-28T03:37:10.764Z">
+          2020-04-28
         </time>
       </a>
     </span>
@@ -624,7 +689,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/04/24/正则表达式基础语法/#comment">评论</a>
+          <a href="/2020/04/28/正则表达式基础语法/#comment">评论</a>
         </span>
       </span>
     </div>

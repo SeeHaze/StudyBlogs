@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>快速删除文件夹方法 | Moyuu的笔记</title>
+
+  
+  <meta name="author" content="Moyuu">
+  
+
+  
+  <meta name="description" content="操作方法
+先创建一个空目录，如：
+1mkdir /root/blank
+
+执行命令
+1rsync --delete-before -d /root/blank/ $TargetDir/
+
+删除空文件夹
+
+
+命令解释12-delete-before 接收者在传输之前进行删除操作-d 以不递归的方式拷贝">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="快速删除文件夹方法"/>
+
+  <meta property="og:site_name" content="Moyuu的笔记"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Moyuu的笔记" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Moyuu的笔记</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>快速删除文件夹方法</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/04/28/快速删除文件夹方法/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-04-28T03:37:10.764Z">
+          2020-04-28
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h3><ol>
+<li><p>先创建一个空目录，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /root/blank</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync --delete-before -d /root/blank/ $TargetDir/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除空文件夹</p>
+</li>
+</ol>
+<h3 id="命令解释"><a href="#命令解释" class="headerlink" title="命令解释"></a>命令解释</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-delete-before 接收者在传输之前进行删除操作</span><br><span class="line">-d 以不递归的方式拷贝目录本身。默认递归时，如果源为"dir1/file1"，则不会拷贝dir1目录，使用该选项将拷贝dir1但不拷贝file1</span><br></pre></td></tr></table></figure>
+
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm删除内容时，将目录的每一个条目逐个删除(unlink)，需要循环重复遍历很多次；</span><br><span class="line">rsync删除内容时，建立好新的空目录，替换掉老目录，不需要进行大量的遍历操作。</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<script>
+		var gitment = new Gitment({
+			id: decodeURI(window.location.pathname),
+			owner: 'SeeHaze',
+			repo: 'StudyBlogs',
+			oauth: {
+				client_id: 'b385b4ed19f856e14741',
+				client_secret: '24794c27927a94c7c0e62134605aaabd44a2998e',
+			},
+		})
+		gitment.render('gitment')
+	</script>
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Moyuu
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
