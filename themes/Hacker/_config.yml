@@ -4,7 +4,7 @@ menu:
   Categories: /categories
 
 # gitment
-gitment: true
+gitment: false
 gitment_owner: SeeHaze
 gitment_repo: StudyBlogs
 gitment_client_id: b385b4ed19f856e14741

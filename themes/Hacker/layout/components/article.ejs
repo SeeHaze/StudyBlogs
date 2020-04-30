@@ -96,6 +96,11 @@
       </span>
     </div>
     <% } %>
+
+    <% if (!index){ %>
+      <%- partial('../_partial/post/livere.ejs') %>
+    <% } %>
+
   </div>
 </article>
 <% if (!index) { %>
