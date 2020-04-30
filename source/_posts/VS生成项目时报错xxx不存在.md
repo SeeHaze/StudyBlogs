@@ -1,3 +1,9 @@
+---
+title: VS生成项目时报错xxx不存在
+date: 2020-04-29 17:15:01
+categories: C#
+---
+
 ### 问题：
 
 ​	VS生成项目时报错：bin/xxxxx/xxxx/xxx.exe不存在（例如“bin/Roslyn/Rosly/ncsc.exe不存在”）
