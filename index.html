@@ -95,6 +95,7 @@
 
       
     </div>
+    
 
   </div>
 
@@ -164,6 +165,7 @@
 
       
     </div>
+    
 
   </div>
 
@@ -216,12 +218,14 @@
   <div class="article-content">
     <div class="entry">
       
-        <blockquote>
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><strong>写在前面</strong></h2><blockquote>
 <p>日常开发中经常会用到正则表达式，对于正则表达式，很多人第一感觉是“啥啥啥？这写的啥？”，一堆乱七八糟的字符组合，完全不知所云。但是其实了解了语法之后就会发现，其实正则不难写，也不是很难懂。<br>本文是我的一篇关于正则表达式基础语法的汇总笔记，主要包括：<strong>元字符</strong>、<strong>字符转义</strong>、<strong>重复</strong>、<strong>字符集合</strong>、<strong>分枝条件</strong>、<strong>反义</strong>、<strong>分组</strong>、<strong>后向引用</strong>、<strong>零宽断言</strong>等共计9个小知识点，每个小知识点都有很多栗子可以食用。</p>
 </blockquote>
-        
       
     </div>
+    
+      <p><a class="excerpt-btn" href="2020/04/27/正则表达式基础语法/"><span>阅读全文</span></a></p>
+    
 
   </div>
 
@@ -282,60 +286,11 @@
 </ol>
 <h3 id="安装frp"><a href="#安装frp" class="headerlink" title="安装frp"></a>安装frp</h3><ol>
 <li><p>linux</p>
-<ul>
-<li><p>下载安装包，地址<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener" title="下载地址">https://github.com/fatedier/frp/releases</a>，选择对应的linux版本，上传至Linux服务器。或者选择下面方式下载：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.32.0/frp_0.32.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压 <code>tar -zxvf frp_0.32.0_linux_amd64.tar.gz</code></p>
-</li>
-<li><p>进入解压目录 <code>cd frp_0.32.0_linux_amd64</code>，这里主要关注4个文件，分别是<strong>frpc、frpc.ini</strong> 和 <strong>frps、frps.ini</strong>，frpc是客户端需要用的文件，frps是服务端需要的文件</p>
-</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li><p>windows</p>
-<ul>
-<li>下载安装包，地址<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener" title="下载地址">https://github.com/fatedier/frp/releases</a>，选择对应的win版本，解压，进入解压目录。</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p>服务端（公网主机）配置：</p>
-<ul>
-<li><p>删除frpc、frpc.ini两个文件，然后编辑frps/ini文件 <code>vi ./frps.ini</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000           #与客户端绑定的进行通信的端口</span><br><span class="line">vhost_http_port = 8000     #访问客户端web服务自定义的端口号</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>保存后启动服务 <code>./frps -c ./frps.ini</code>，这个命令是前台启动可以使用nohup命令后台启动 <code>nohup ./frps -c ./frps.ini &amp;</code></li>
-<li>在防火墙上开放刚才设置的两个端口</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>客户端配置：</p>
-<ul>
-<li><p>删除frps、frps.ini两个文件，然后编辑frpc.ini</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 101.132.236.xxx   #公网服务器ip</span><br><span class="line">server_port = 7000            #与服务端bind_port一致</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash">公网访问内部web服务器以http方式</span></span><br><span class="line">[web]</span><br><span class="line">type = http         #访问协议</span><br><span class="line">local_port = 12345   #内网web服务的端口号</span><br><span class="line">custom_domains = www.moyuu.fun   #所绑定的公网服务器域名</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果是win系统，在当前目录中打开powerShell，执行<code>./frpc.exe -c ./frpc.ini</code></p>
-</li>
-<li><p>如果是linux则执行 <code>nohup ./frpc -c ./frpc.ini &amp;</code></p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><ol>
-<li><p>先访问本地web站点</p>
-<p><img src="http://file.moyuu.fun:10031/images/image-20200402132605338.png" alt="image-20200402132605338"></p>
-</li>
-<li><p>通过域名访问（这里加了端口号，如果想要不加端口号就能访问，则需要在nginx里添加代理转发）</p>
-<p><img src="http://file.moyuu.fun:10031/images/image-20200402132638843.png" alt="image-20200402132638843"></p>
-</li>
-</ol>
-
       
     </div>
+    
+      <p><a class="excerpt-btn" href="2020/04/26/frp实现内网穿透功能/"><span>阅读全文</span></a></p>
+    
 
   </div>
 

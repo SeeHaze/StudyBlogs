@@ -17,9 +17,7 @@
 域名解析到公网主机
 
 安装frp
-linux
-
-下载安装包，地址https://github.com/fatedier/frp/releases，选择对应">
+linux">
   
 
   
@@ -102,6 +100,7 @@ linux
 </ol>
 <h3 id="安装frp"><a href="#安装frp" class="headerlink" title="安装frp"></a>安装frp</h3><ol>
 <li><p>linux</p>
+<a id="more"></a>
 <ul>
 <li><p>下载安装包，地址<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener" title="下载地址">https://github.com/fatedier/frp/releases</a>，选择对应的linux版本，上传至Linux服务器。或者选择下面方式下载：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.32.0/frp_0.32.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
@@ -123,7 +122,8 @@ linux
 <ol start="3">
 <li><p>服务端（公网主机）配置：</p>
 <ul>
-<li><p>删除frpc、frpc.ini两个文件，然后编辑frps/ini文件 <code>vi ./frps.ini</code></p>
+<li>删除frpc、frpc.ini两个文件，然后编辑frps/ini文件 <code>vi ./frps.ini</code></li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000           #与客户端绑定的进行通信的端口</span><br><span class="line">vhost_http_port = 8000     #访问客户端web服务自定义的端口号</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -131,17 +131,15 @@ linux
 <li>在防火墙上开放刚才设置的两个端口</li>
 </ul>
 </li>
-</ul>
-</li>
 <li><p>客户端配置：</p>
 <ul>
-<li><p>删除frps、frps.ini两个文件，然后编辑frpc.ini</p>
+<li>删除frps、frps.ini两个文件，然后编辑frpc.ini</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 101.132.236.xxx   #公网服务器ip</span><br><span class="line">server_port = 7000            #与服务端bind_port一致</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash">公网访问内部web服务器以http方式</span></span><br><span class="line">[web]</span><br><span class="line">type = http         #访问协议</span><br><span class="line">local_port = 12345   #内网web服务的端口号</span><br><span class="line">custom_domains = www.moyuu.fun   #所绑定的公网服务器域名</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果是win系统，在当前目录中打开powerShell，执行<code>./frpc.exe -c ./frpc.ini</code></p>
-</li>
-<li><p>如果是linux则执行 <code>nohup ./frpc -c ./frpc.ini &amp;</code></p>
-</li>
+
+<ul>
+<li>如果是win系统，在当前目录中打开powerShell，执行<code>./frpc.exe -c ./frpc.ini</code></li>
+<li>如果是linux则执行 <code>nohup ./frpc -c ./frpc.ini &amp;</code></li>
 </ul>
 </li>
 </ol>
@@ -156,6 +154,7 @@ linux
 
       
     </div>
+    
 
   </div>
 
