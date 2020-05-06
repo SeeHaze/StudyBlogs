@@ -743,7 +743,7 @@ article.archive {
   margin: 2em auto;
 }
 .archive-post .archive-title {
-  font-size: 1.7em;
+  font-size: 1.9em;
   line-height: 1;
   position: relative;
   color: #212121;
@@ -871,7 +871,7 @@ article .categories-cloud > span > span {
   vertical-align: middle;
 }
 article .archive-categories .archive-title {
-  font-size: 1.7em;
+  font-size: 1.9em;
 }
 article .archive-categories time {
   margin-left: 3em;
@@ -912,6 +912,10 @@ article .categories-cloud i {
 article .archive-categories .post-categories,
 article .categories-cloud .post-categories {
   margin-right: 3rem;
+}
+article .archive-categories .post-categories a,
+article .categories-cloud .post-categories a {
+  font-size: 1.6rem;
 }
 article .archive-categories .post-categories a:before,
 article .categories-cloud .post-categories a:before {
