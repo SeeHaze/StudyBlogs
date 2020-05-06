@@ -10,25 +10,7 @@
   
 
   
-  <meta name="description" content="正则表达式参考Created By: Moyuu FunLast Edited: Dec 21, 2019 4:01 PMTags: RegExp, 正则表达式
-元字符
-
-
-代码
-说明
-
-
-
-.
-匹配除换行符以外的任意字符
-
-
-\w
-匹配字母或数字或下划线或汉字
-
-
-\s
-匹配任意的空白符，包括空格">
+  <meta name="description" content="日常开发中经常会用到正则表达式，对于正则表达式，很多人第一感觉是“啥啥啥？这写的啥？”，一堆乱七八糟的字符组合，完全不知所云。但是其实了解了语法之后就会发现，其实正则不难写，也不是很难懂。本文是我的一篇关于正则表达式基础语法的汇总笔记，主要包括：元字符、字符转义、重复、字符集合、分枝条件、反义、分组、后向引用、零宽断言等共计9个小知识点，每个小知识点都有很多栗子可以食用。">
   
 
   
@@ -103,7 +85,11 @@
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="正则表达式参考"><a href="#正则表达式参考" class="headerlink" title="正则表达式参考"></a>正则表达式参考</h1><p>Created By: Moyuu Fun<br>Last Edited: Dec 21, 2019 4:01 PM<br>Tags: RegExp, 正则表达式</p>
+        <blockquote>
+<p>日常开发中经常会用到正则表达式，对于正则表达式，很多人第一感觉是“啥啥啥？这写的啥？”，一堆乱七八糟的字符组合，完全不知所云。但是其实了解了语法之后就会发现，其实正则不难写，也不是很难懂。<br>本文是我的一篇关于正则表达式基础语法的汇总笔记，主要包括：<strong>元字符</strong>、<strong>字符转义</strong>、<strong>重复</strong>、<strong>字符集合</strong>、<strong>分枝条件</strong>、<strong>反义</strong>、<strong>分组</strong>、<strong>后向引用</strong>、<strong>零宽断言</strong>等共计9个小知识点，每个小知识点都有很多栗子可以食用。</p>
+</blockquote>
+<a id="more"></a>
+
 <h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a><strong>元字符</strong></h2><table>
 <thead>
 <tr>
@@ -187,14 +173,12 @@
 <p><code>[.?!]</code>匹配标点符号(.或?或!)</p>
 <p><code>[0-9]</code>等同于\d，表示一位数字</p>
 <p><code>[a-z0-9A-Z_]</code>匹配数字字母及下划线</p>
+<p><code>[\u4e00-\u9fa5]</code>匹配中文字符</p>
 <h2 id="分枝条件"><a href="#分枝条件" class="headerlink" title="分枝条件"></a><strong>分枝条件</strong></h2><p>分枝条件指的是有几种规则，如果满足其中任意一种规则都应该当成匹配，具体方法是用 <code>|</code> 把不同的规则分隔开</p>
 <p>例如：</p>
 <p><code>0\d{2}-\d{8}|0\d{3}-\d{7}</code></p>
 <p>这个表达式能匹配两种以连字号分隔的电话号码：一种是三位区号，8位本地号(如010-12345678)，一种是4位区号，7位本地号(0376-2233445)</p>
 <p>匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了，因此，<strong>使用分枝条件时，要注意各个条件的顺序</strong></p>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a><strong>分组</strong></h2><p>如果想要重复多个字符，可以用小括号来指定子表达式(也叫做分组)</p>
-<p>例如：</p>
-<p><code>((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)</code>匹配IP地址</p>
 <h2 id="反义"><a href="#反义" class="headerlink" title="反义"></a><strong>反义</strong></h2><table>
 <thead>
 <tr>
@@ -230,6 +214,9 @@
 <p>例如：</p>
 <p><code>\S+</code>匹配不包含空白符的字符串。</p>
 <p><code>&lt;a[^&gt;]+&gt;</code>匹配用尖括号括起来的以a开头的字符串</p>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a><strong>分组</strong></h2><p>如果想要重复多个字符，可以用小括号来指定子表达式(也叫做分组)</p>
+<p>例如：</p>
+<p><code>((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)</code>匹配IP地址</p>
 <h2 id="后向引用"><a href="#后向引用" class="headerlink" title="后向引用"></a><strong>后向引用</strong></h2><p>使用小括号指定一个子表达式后，<strong>匹配这个子表达式的文本</strong>(也就是此分组捕获的内容)可以在表达式或其它程序中作进一步的处理。默认情况下，每个分组会自动拥有一个<strong>组号</strong>，规则是：从左向右，以分组的左括号为标志，第一个出现的分组的组号为1，第二个为2，以此类推。</p>
 <p><strong>后向引用</strong>用于重复搜索前面某个分组匹配的文本。例如，<code>\1</code>代表分组1匹配的文本。</p>
 <p>例：</p>
