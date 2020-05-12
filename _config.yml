@@ -99,3 +99,26 @@ theme: Hacker
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+live2d:
+  enable: true
+  pluginModelPath: assets/
+  model:
+    use: live2d-widget-model-shizuku   #模板目录，在node_modules里  # live2d-widget-model-hijiki  
+  display:
+    position: left
+    width: 150 
+    height: 300
+  mobile:
+    show: true  #是否在手机进行显示
+
+# RSS订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  

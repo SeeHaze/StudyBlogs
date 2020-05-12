@@ -33,3 +33,5 @@ googleTrackId:
 # whether to show read more button when showing article in excerpt in main page
 read_more: true
 read_more_btn: true
+
+rss: /atom.xml
