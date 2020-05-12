@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Moyuu的笔记</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.moyuu.fun/"/>
+  <updated>2020-05-12T10:57:51.732Z</updated>
+  <id>http://blog.moyuu.fun/</id>
+  
+  <author>
+    <name>Moyuu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VS生成项目时报错xxx不存在</title>
+    <link href="http://blog.moyuu.fun/2020/04/29/VS%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%97%B6%E6%8A%A5%E9%94%99xxx%E4%B8%8D%E5%AD%98%E5%9C%A8/"/>
+    <id>http://blog.moyuu.fun/2020/04/29/VS%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%97%B6%E6%8A%A5%E9%94%99xxx%E4%B8%8D%E5%AD%98%E5%9C%A8/</id>
+    <published>2020-04-29T09:15:01.000Z</published>
+    <updated>2020-05-12T10:57:51.732Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;问题：&quot;&gt;&lt;a href=&quot;#问题：&quot; class=&quot;headerlink&quot; title=&quot;问题：&quot;&gt;&lt;/a&gt;问题：&lt;/h3&gt;&lt;p&gt;​   
+        
+      
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="http://blog.moyuu.fun/categories/C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux快速删除文件夹</title>
+    <link href="http://blog.moyuu.fun/2020/04/28/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://blog.moyuu.fun/2020/04/28/%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E6%96%B9%E6%B3%95/</id>
+    <published>2020-04-28T08:36:08.000Z</published>
+    <updated>2020-05-12T10:57:51.732Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;操作方法&quot;&gt;&lt;a href=&quot;#操作方法&quot; class=&quot;headerlink&quot; title=&quot;操作方法&quot;&gt;&lt;/a&gt;操作方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;先创建一个空目录，如：&lt;/p&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://blog.moyuu.fun/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式参考</title>
+    <link href="http://blog.moyuu.fun/2020/04/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>http://blog.moyuu.fun/2020/04/27/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</id>
+    <published>2020-04-27T10:07:56.000Z</published>
+    <updated>2020-05-12T10:57:51.732Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;&lt;strong&gt;写在前面&lt;/strong&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;日常开发中经常会用到正则表达式，对于正则表达式，很多人第一感觉是“啥啥啥？这写的啥？”，一堆乱七八糟的字符组合，完全不知所云。但是其实了解了语法之后就会发现，其实正则不难写，也不是很难懂。&lt;br&gt;本文是我的一篇关于正则表达式基础语法的汇总笔记，主要包括：&lt;strong&gt;元字符&lt;/strong&gt;、&lt;strong&gt;字符转义&lt;/strong&gt;、&lt;strong&gt;重复&lt;/strong&gt;、&lt;strong&gt;字符集合&lt;/strong&gt;、&lt;strong&gt;分枝条件&lt;/strong&gt;、&lt;strong&gt;反义&lt;/strong&gt;、&lt;strong&gt;分组&lt;/strong&gt;、&lt;strong&gt;后向引用&lt;/strong&gt;、&lt;strong&gt;零宽断言&lt;/strong&gt;等共计9个小知识点，每个小知识点都有很多栗子可以食用。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="正则" scheme="http://blog.moyuu.fun/categories/%E6%AD%A3%E5%88%99/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>frp实现内网穿透功能</title>
+    <link href="http://blog.moyuu.fun/2020/04/26/frp%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%8A%9F%E8%83%BD/"/>
+    <id>http://blog.moyuu.fun/2020/04/26/frp%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%8A%9F%E8%83%BD/</id>
+    <published>2020-04-26T04:12:57.000Z</published>
+    <updated>2020-05-12T10:57:51.732Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;一台公网主机（我是用的阿里云服务器，系统centOS 7）&lt;/li&gt;
+&lt;li&gt;内网主机（我用的是个人电脑，系统win10） &lt;/li&gt;
+&lt;li&gt;域名&lt;/li&gt;
+&lt;li&gt;域名解析到公网主机&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;安装frp&quot;&gt;&lt;a href=&quot;#安装frp&quot; class=&quot;headerlink&quot; title=&quot;安装frp&quot;&gt;&lt;/a&gt;安装frp&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;linux&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://blog.moyuu.fun/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+</feed>
