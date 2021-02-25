@@ -19,6 +19,8 @@ Console.WriteLine(DateTime.Now.ToString("yyyy/MM/dd" ));
 
  1. 自定义短日期值的格式
 
+<!-- more -->
+
     ```c#
     Console.WriteLine(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss",
         new DateTimeFormatInfo
@@ -42,13 +44,15 @@ Console.WriteLine(DateTime.Now.ToString("yyyy/MM/dd" ));
 #### 原因解释
 
 ​	在DateTimeFormat.Format方法中，正斜杠`/`会被格式化为DateTimeFormatInfo.DateSeparator即短日期分隔符，
-
+   源码：
 ```c#
+...
 case '/':
     stringBuilder.Append(dtfi.DateSeparator);
     num = 1;
     break;
+...
 ```
 
-​	使用反斜杠`\`转义或使用单引号`'`将其做为字符串进行处理则可规避这个问题。
+​	使用反斜杠`\`转义 或 使用单引号`'`将其做为字符串进行处理则可规避这个问题。
 
