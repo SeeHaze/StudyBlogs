@@ -88,27 +88,12 @@
 <li>但是如果更改了短日期格式为<code>-</code>或者<code>.</code>连接，则会输出 <code>2021-02-25</code> 或 <code>2021.02.25</code> </li>
 </ul>
 <h4 id="解决方案（三种）"><a href="#解决方案（三种）" class="headerlink" title="解决方案（三种）"></a>解决方案（三种）</h4><ol>
-<li><p>自定义短日期值的格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(DateTime.Now.ToString(&quot;yyyy&#x2F;MM&#x2F;dd HH:mm:ss&quot;,</span><br><span class="line">    new DateTimeFormatInfo</span><br><span class="line">    &#123;</span><br><span class="line">    	ShortDatePattern &#x3D; &quot;yyyy&#x2F;MM&#x2F;dd&quot;,</span><br><span class="line">    &#125;));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>转义</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(DateTime.Now.ToString(&quot;yyyy\\&#x2F;MM\\&#x2F;dd HH:mm:ss&quot;));</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>自定义短日期值的格式</li>
 </ol>
-<ol start="3">
-<li><p>字符串(用单引号<code>&#39;</code>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(DateTime.Now.ToString(&quot;yyyy&#39;&#x2F;&#39;MM&#39;&#x2F;&#39;dd HH:mm:ss&quot;));</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h4 id="原因解释"><a href="#原因解释" class="headerlink" title="原因解释"></a>原因解释</h4><p>​    在DateTimeFormat.Format方法中，正斜杠<code>/</code>会被格式化为DateTimeFormatInfo.DateSeparator即短日期分隔符，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">case &#39;&#x2F;&#39;:</span><br><span class="line">    stringBuilder.Append(dtfi.DateSeparator);</span><br><span class="line">    num &#x3D; 1;</span><br><span class="line">    break;</span><br></pre></td></tr></table></figure>
-
-<p>​    使用反斜杠<code>\</code>转义或使用单引号<code>&#39;</code>将其做为字符串进行处理则可规避这个问题。</p>
-
       
     </div>
+    
+      <p><a class="excerpt-btn" href="2021/02/25/C# 日期格式化中的正斜杠问题/"><span>阅读全文</span></a></p>
     
 
   </div>
