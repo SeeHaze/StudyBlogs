@@ -68,8 +68,8 @@ categories: 工具
 
   1. 先访问本地web站点
 
-   ![image-20200402132605338](http://file.moyuu.fun:10031/images/image-20200402132605338.png)
+   ![image-20200402132605338](http://blog.moyuu.fun/images/image-20200402132605338.png)
 
   2. 通过域名访问（这里加了端口号，如果想要不加端口号就能访问，则需要在nginx里添加代理转发）
 
-   ![image-20200402132638843](http://file.moyuu.fun:10031/images/image-20200402132638843.png)
+   ![image-20200402132638843](http://blog.moyuu.fun/images/image-20200402132638843.png)
